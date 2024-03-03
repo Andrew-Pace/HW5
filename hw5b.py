@@ -4,10 +4,9 @@ import random as rnd
 from matplotlib import pyplot as plt
 import numpy as np
 
-
 # endregion
 
-# region functions
+# region Functions
 def ffPoint(Re, rr):
     """
     This function takes Re and rr as parameters and outputs a friction factor according to the following:
@@ -49,7 +48,7 @@ def main():
 
 # endregion
 
-# region function calls
+# region Function Calls
 if __name__ == "__main__":
     main()
 # endregion
