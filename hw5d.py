@@ -1,11 +1,11 @@
-# region imports
+# region Imports
 import numpy as np
 from scipy.optimize import curve_fit
 import matplotlib.pyplot as pyplot
 from math import floor, ceil
 # endregion
 
-# region functions
+# region Functions
 def RSquared(x,y,coeff):
     '''
     To calculate the R**2 value for a set of x,y data and a LeastSquares fit with polynomial having coefficients a
@@ -20,8 +20,9 @@ def RSquared(x,y,coeff):
     ymodel=Poly(x,*coeff)
     for i in range(len(y)):
         SSTot+=(y[i]-AvgY)**2
-        SSRes+=(y[i]-ymodel[i])**2
-    RSq=#JES MISSING CODE
+        SSRes+=(y[i]-ymodel[i])**2 #aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    RSq= 1 - SSRes / SSTot
+
     return RSq
 
 def Poly(xdata, *a):
@@ -127,7 +128,7 @@ def main():
 
 # endregion
 
-# region function calls
+# region Function Calls
 if __name__ == "__main__":
     main()
 # endregion

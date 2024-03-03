@@ -1,4 +1,4 @@
-# region imports
+# region Imports
 import numpy as np
 from scipy.optimize import fsolve
 import matplotlib.pyplot as plt
@@ -6,7 +6,7 @@ from matplotlib.ticker import FormatStrFormatter
 import math
 # endregion
 
-# region functions
+# region Functions
 def ff(Re, rr, CBEQN=True):
     """
     This function calculates the friction factor for a pipe based on the
@@ -81,7 +81,7 @@ def main():
     plotMoody()
 # endregion
 
-# region function calls
+# region Function Calls
 if __name__=="__main__":
     main()
 # endregion

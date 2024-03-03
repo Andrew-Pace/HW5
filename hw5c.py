@@ -1,16 +1,18 @@
 
-
+# region imports
 from scipy.integrate import odeint
 import numpy as np
 import matplotlib.pyplot as plt
+# endregion
 
-
+# region Initial Values
 # defining global initial values to be used in multiple functions
 pa = 1e5
 t = np.linspace(0, 0.1, 100)
 y0 = [0, pa, pa, 0]
+# endregion
 
-
+# region Functions
 def plotter(lines):
     """
     Plots lines using matplotlib
@@ -69,8 +71,9 @@ def odesyst(y, t):
          (B / (rho * v)) * (rho * area * y[0] - yy * Kvalve * (y[2] - pa)), y[0]]
 
     return f  # returning all three equations
+# endregion
 
-
+# region Main
 def main():
     """
     Main function :return: plots ẋ as a function of time, with nice title and labels. Plots p1 and p2 together as
@@ -78,7 +81,9 @@ def main():
     """
     # calls odeint to solve using our function odesyst as an argument, then calls plotter to plot the results
     plotter(odeint(odesyst, y0, t))
+# endregion
 
-
+# region Function Calls
 if __name__ == "__main__":
     main()
+# endregion
