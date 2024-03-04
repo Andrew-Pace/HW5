@@ -3,7 +3,7 @@
 # region Imports
 import numpy as np
 from scipy.optimize import curve_fit
-import matplotlib.pyplot as pyplot
+import matplotlib.pyplot as plt
 from math import floor, ceil
 # endregion
 
@@ -59,16 +59,16 @@ def PlotLeastSquares(x, y, coeff, showpoints=True, npoints=500):
     xvals = np.linspace(Xmin, Xmax, npoints)
     yvals = Poly(xvals, *coeff)
     RSq = RSquared(x, y, coeff)
-    pyplot.plot(xvals, yvals, linestyle='dashed', color='black', linewidth='2')
-    pyplot.title(r'$R^2={:0.3f}$'.format(RSq))
-    pyplot.xlim(floor(Xmin * 10) / 10, ceil(Xmax * 10) / 10)
-    pyplot.ylim(floor(Ymin), ceil(Ymax * 10) / 10)
+    plt.plot(xvals, yvals, linestyle='dashed', color='black', linewidth='2')
+    plt.title(r'$R^2={:0.3f}$'.format(RSq))
+    plt.xlim(floor(Xmin * 10) / 10, ceil(Xmax * 10) / 10)
+    plt.ylim(floor(Ymin), ceil(Ymax * 10) / 10)
     if showpoints:
-        pyplot.plot(x, y, linestyle='none', marker='o', markerfacecolor='white', markeredgecolor='black', markersize=10)
-    pyplot.xlabel('X values')
-    pyplot.ylabel('Y values')
-    pyplot.gca().tick_params(axis='both', top=True, right=True, direction='in', grid_linewidth=1, grid_linestyle='dashed', grid_alpha=0.5)
-    pyplot.show()
+        plt.plot(x, y, linestyle='none', marker='o', markerfacecolor='white', markeredgecolor='black', markersize=10)
+    plt.xlabel('X values')
+    plt.ylabel('Y values')
+    plt.gca().tick_params(axis='both', top=True, right=True, direction='in', grid_linewidth=1, grid_linestyle='dashed', grid_alpha=0.5)
+    plt.show()
     return xvals, yvals
 
 
@@ -94,14 +94,14 @@ def main():
     linx, liny = PlotLeastSquares(x, y, coeff1, showpoints=True)
     coeff2 = LeastSquaresFit(x, y, power=3)
     cubx, cuby = PlotLeastSquares(x, y, coeff2, showpoints=True)
-    pyplot.plot(linx, liny, linewidth=2, linestyle='dashed', color='black', label='Linear fit')
-    pyplot.plot(cubx, cuby, linewidth=2, linestyle='dotted', color='black', label='Cubic fit')
-    pyplot.plot(x, y, linestyle='none', marker='o', markersize=10, markerfacecolor='white', markeredgecolor='black', label='Data')
-    pyplot.xlabel('X values')
-    pyplot.ylabel('Y values')
-    pyplot.legend()
-    pyplot.tick_params(axis='both', top=True, right=True, direction='in', grid_linewidth=1, grid_linestyle='dashed', grid_alpha=0.5)
-    pyplot.show()
+    plt.plot(linx, liny, linewidth=2, linestyle='dashed', color='black', label='Linear fit')
+    plt.plot(cubx, cuby, linewidth=2, linestyle='dotted', color='black', label='Cubic fit')
+    plt.plot(x, y, linestyle='none', marker='o', markersize=10, markerfacecolor='white', markeredgecolor='black', label='Data')
+    plt.xlabel('X values')
+    plt.ylabel('Y values')
+    plt.legend()
+    plt.tick_params(axis='both', top=True, right=True, direction='in', grid_linewidth=1, grid_linestyle='dashed', grid_alpha=0.5)
+    plt.show()
 
 # endregion
 
