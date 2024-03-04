@@ -33,6 +33,7 @@ def ffPoint(Re, rr):
 
 
 def PlotPoint(Re, f):
+    """determines whether the point falls in the transition zone"""
     if 2000 <= Re <= 4000:
         pta.plotMoody(pt=(Re, f), plotPoint=True, tri=True)
     else:
@@ -40,6 +41,7 @@ def PlotPoint(Re, f):
 
 
 def main():
+    """Main Function, asks for inputs and then calls functions to display moody chart and mark the needed point on the chart"""
     Re = float(input("Enter the Reynolds number: "))
     rr = float(input("Enter the relative roughness: "))
     f = ffPoint(Re, rr)
