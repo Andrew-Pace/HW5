@@ -78,6 +78,7 @@ def plotMoody(pt=(3000,0.05), plotPoint=False, tri=False):
     plt.show()
 
 def main():
+    """Main Function, calls function to make moody chart"""
     plotMoody()
 # endregion
 
